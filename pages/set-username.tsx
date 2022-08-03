@@ -37,14 +37,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	if (!session) {
 		return {
-			props: {},
+			redirect: {
+				destination: "/api/auth/signin",
+				permanent: false,
+			},
 		};
 	} else {
 		return {
-			redirect: {
-				destination: "/me",
-				permanent: false,
-			},
+			props: {},
 		};
 	}
 };
