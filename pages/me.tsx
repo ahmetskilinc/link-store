@@ -30,8 +30,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 		};
 	}
 
-	const user = (await axios.get(`${process.env.APP_URL}/api/Users/${session.user?.email}`)).data
-		.data;
+	const user = (
+		await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/Users/${session.user?.email}`)
+	).data.data;
 
 	if (!user.username) {
 		return {

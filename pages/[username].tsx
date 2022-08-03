@@ -30,7 +30,8 @@ const Home = (props: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { username } = context.query;
-	const user = (await axios.get(`${process.env.APP_URL}/api/Users/${username}`)).data.data;
+	const user = (await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/Users/${username}`)).data
+		.data;
 	return {
 		props: {
 			user,

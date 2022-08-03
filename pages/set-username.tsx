@@ -11,7 +11,7 @@ const Home = () => {
 		e.preventDefault();
 
 		if (status === "authenticated") {
-			axios.put(`${process.env.APP_URL}/api/Users/${session.user!.email}`, {
+			axios.put(`${process.env.NEXT_PUBLIC_APP_URL}/api/Users/${session.user!.email}`, {
 				username: username.current.value,
 			});
 			router.push("/me");
