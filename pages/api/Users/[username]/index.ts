@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../../../lib/mongodb";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const UsersIndex = async (req: NextApiRequest, res: NextApiResponse) => {
 	const client = await clientPromise;
 	const db = client.db("link-store");
 
@@ -63,3 +63,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 			break;
 	}
 };
+
+export default UsersIndex;

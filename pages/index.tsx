@@ -1,11 +1,14 @@
 import { GetServerSideProps } from "next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { unstable_getServerSession } from "next-auth/next";
+import Link from "next/link";
 
 const Home = () => {
 	return (
 		<div>
-			<a href="/api/auth/signin">Sign In</a>
+			<Link href="/api/auth/signin">
+				<a>Sign In</a>
+			</Link>
 		</div>
 	);
 };

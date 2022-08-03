@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import LoginButton from "./LoginButton";
 
@@ -17,7 +18,9 @@ const Profile = ({ user }: Props) => {
 					<ul>
 						{user.links.map(({ link, title }: { link: string; title: string }) => (
 							<li key={`${link}${title}`}>
-								<a href={link}>{title}</a>
+								<Link href={link}>
+									<a>{title}</a>
+								</Link>
 							</li>
 						))}
 					</ul>

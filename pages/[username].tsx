@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { GetServerSideProps } from "next";
+import Link from "next/link";
 
 type Props = {
 	user: any;
@@ -17,7 +18,9 @@ const Home = (props: Props) => {
 			<ul>
 				{props.user.links.map(({ link, title }: { link: string; title: string }) => (
 					<li key={`${link}${title}`}>
-						<a href={link}>{title}</a>
+						<Link href={link}>
+							<a>{title}</a>
+						</Link>
 					</li>
 				))}
 			</ul>
