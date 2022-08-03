@@ -13,7 +13,7 @@ const AddNewLink = (props: Props) => {
 
 		if (status === "authenticated") {
 			axios.put(
-				`${process.env.NEXT_PUBLIC_APP_URL}api/Users/${session.user!.email}/users-links`,
+				`${process.env.NEXT_PUBLIC_APP_URL}/api/Users/${session.user!.email}/users-links`,
 				{
 					links: {
 						link: link.current.value,
